@@ -8,7 +8,7 @@ const Navbar = ()=>{
     const [activeItem, setActiveItem]=useState('');
 
     const toggleMenu =()=>{
-        console.log('menu Clicked')
+        
         setIsOpen(!isOpen)
     }
     const handleMenuClick =(name)=>{
@@ -37,8 +37,11 @@ const Navbar = ()=>{
             <div className="space-x-8 hidden md:flex items-center">
                 {
                     menuItems.map((item,index)=> (
-                        <a className="text-black px-2 hover:bg-primary rounded-sm
-                        hover:underline underline-offset-4 transition-all duration-300"
+                        <a onClick={()=> handleMenuClick(item.name)} className={`text-black block px-2 hover:bg-primary rounded-sm
+                            hover:underline underline-offset-4 transition-all duration-300
+                               ${
+                                activeItem ===item.name? 'bg-primary text-black underline-offset-4': '' }
+                               `}
                          key={index} href={item.href}>{item.name}</a>
                     ))
                 }
@@ -68,8 +71,11 @@ const Navbar = ()=>{
 
                         {
                     menuItems.map((item,index)=> (
-                        <a className="text-black block px-2 hover:bg-primary rounded-sm
-                        hover:underline underline-offset-4 transition-all duration-300"
+                        <a onClick={()=> handleMenuClick(item.name)} className={`text-black block px-2 hover:bg-primary rounded-sm
+                        hover:underline underline-offset-4 transition-all duration-300
+                           ${
+                            activeItem ===item.name? 'text-primary': '' }
+                           `}
                          key={index} href={item.href}>{item.name}</a>
                     ))
                 }
