@@ -16,17 +16,25 @@ const Services = () => {
                 </div>
             </div>
 
-            <div className=''>
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
                      {
                         servicesData.map ((service, index)=>(
-                            <div key={index} className='flex flex-col sm:flex-row md:justify-between 
-                             md:items-center gap-6 p-6 rounded-lg border border-[#191A23]'>
+                            <div key={index} className={`flex flex-col sm:flex-row md:justify-between 
+                             md:items-center gap-6 p-6 rounded-lg border border-[#191A23] cursor-pointer ${service.backgroundColor}
+                             ${service.textColor}`}>
                                 <div className='md:w-1/2 flex flex-col h-full justify-between'>
                                     <button className={`text-xl py-1.5 font-semibold mb-2 rounded-sm
                                         sm:w-60 ${service.foregroundColor}`}>{service.title}</button>
-                                        <a href="">
+                                        <a href="#" className={`flex items-center gap-4 py-2 rounded-md 
+                                           text-black hover:bg-opacity-80 hover:text-black/80`}>
                                              <img src={LinkIcon} alt=""  className='size-6 rounded-full'/>
+                                             <span className='text-lg font-medium'>Learn More</span>
                                         </a>
+                                </div>
+
+                                <div className='md:w-1/2 order-first md:order-last'>
+                                    <img src={service.image} alt="" className='w-full object-cover
+                                    rounded-md mb-4' />
                                 </div>
                             </div>
                         ))
