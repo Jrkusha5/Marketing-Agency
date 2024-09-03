@@ -36,7 +36,7 @@ const WorkingProcess = () => {
                                 <h3 className='text-lg font-semibold'>{step.question}</h3>
                             </div>
 
-                            <div className='text-right  p-1.5 '>
+                            <div className='text-right p-1.5 '>
                                 {
                                     openIndex=== i ? (<FaMinus/>) : (<FaPlus/>)
                                 }

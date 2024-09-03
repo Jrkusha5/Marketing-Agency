@@ -37,6 +37,10 @@ const Testimonials = () => {
       setCurrentIndex((prevIndex)=>(prevIndex-itemsToShow + testimonialsData.length)% testimonialsData.length)
      }
 
+     const handleDotClick =(index)=>{
+      setCurrentIndex(index)
+     }
+
   return (
     <section className='pt-24 pb-12 bg-white' id='testimonials'>
   <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative'>
@@ -54,7 +58,7 @@ const Testimonials = () => {
             <div className='relative mb-12'>
               <div className='flex flex-col md:flex-row max-w-7xl gap-3 mx-auto overflow-hidden'>
                 {
-                  testimonialsData.slice(0,3).map((testimonial, index)=>(
+                  testimonialsData.slice(currentIndex , currentIndex + itemsToShow).map((testimonial, index)=>(
                     <div key={index} className='w-full relative py-5 md:max-w-md px-2'>
                       <div className='absolute top-0 left-0 z-30'>
                         <BsChatQuote className='size-8'/>
@@ -71,15 +75,28 @@ const Testimonials = () => {
 
               <div className='absolute mt-5 left-1/2 transform -translate-x-1/2 flex
               items-center space-x-5 z-10'>
-                <button className='text-black'>
+                <button className='text-black'
+                onClick={handlePrevious}
+                >
                   <IoArrowBack/>
                 </button>
 
-                <div>
-                         
+                <div className='flex space-x-2'>
+                     {
+                      testimonialsData.map((_, index)=>(
+                        <button 
+                        onClick={()=>handleDotClick}
+                        key={index} className={`w-3 h-3 rounded-full ${index >=currentIndex
+                          && index <currentIndex + itemsToShow ? 'bg-primary' : 'bg-gray-400'
+                        }`}/>
+                           
+                        
+                      ))
+                     }    
                 </div>
 
-                <button className='text-black'>
+                <button className='text-black'
+                onClick={handleNext}>
                   <IoMdArrowForward/>
                 </button>
 
