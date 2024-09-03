@@ -1,4 +1,4 @@
-const caseStudies = [
+export  const caseStudies = [
     {
         title: 'Case Study 1',
         description: 'For a local restaurant, we implemented a targeted PPC campaign that resulted in a 50% increase in website traffic and a 25% increase in sales.',
@@ -16,5 +16,3 @@ const caseStudies = [
     },
     // Add more case studies as needed
 ];
-
-export default caseStudies;

@@ -19,7 +19,7 @@ const Navbar = ()=>{
     const menuItems =[
         {name: 'About Us', href:'#about'},
         {name: 'Services', href:'#services'},
-        {name: 'UseCases', href:'#useCases'},
+        {name: 'UseCases', href:'#use-cases'},
         {name: 'Team', href:'#team'},
         {name: 'Testimonials', href:'#testimonials'},
     ]

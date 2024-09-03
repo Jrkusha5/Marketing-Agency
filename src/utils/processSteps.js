@@ -1,4 +1,4 @@
-const processSteps = [
+export  const processSteps = [
     {
         number: '01',
         question: 'Consultation',
@@ -31,4 +31,3 @@ const processSteps = [
     },
 ];
 
-export default processSteps;
