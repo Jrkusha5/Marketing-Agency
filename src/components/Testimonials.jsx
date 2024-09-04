@@ -4,6 +4,8 @@ import { BsChatQuote } from 'react-icons/bs'
 import { IoArrowBack } from 'react-icons/io5'
 import { IoMdArrowForward } from 'react-icons/io'
 
+import { motion } from "framer-motion"
+
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex]= useState(0);
      const [itemsToShow, setItemsToShow]=useState(1)
@@ -58,8 +60,14 @@ const Testimonials = () => {
             <div className='relative mb-12'>
               <div className='flex flex-col md:flex-row max-w-7xl gap-3 mx-auto overflow-hidden'>
                 {
-                  testimonialsData.slice(currentIndex , currentIndex + itemsToShow).map((testimonial, index)=>(
-                    <div key={index} className='w-full relative py-5 md:max-w-md px-2'>
+                  testimonialsData.slice(currentIndex , currentIndex + itemsToShow).map
+                  ((testimonial, index)=>(
+                    <motion.div
+                     initial={{opacity:0, x:50}}
+                     animate={{opacity:1, x:0}}
+                     exit={{opaity:0, x:-50}}
+                     transition={{duration:0.5}}
+                    key={index} className='w-full relative py-5 md:max-w-md px-2'>
                       <div className='absolute top-0 left-0 z-30'>
                         <BsChatQuote className='size-8'/>
                       </div>
@@ -68,7 +76,7 @@ const Testimonials = () => {
                    <p className='text-base font-medium mb-4 '>{testimonial.text}</p>
                    <p className='text-sm font-semibold text-gray-700'>{testimonial.author}</p>
                       </div>
-                    </div>
+                    </motion.div>
                   ))
                 }
               </div>

@@ -1,5 +1,6 @@
 import './App.css'
 import CaseStudies from './components/CaseStudies'
+import Contact from './components/Contact'
 import CTA from './components/CTA'
 import Hero from './components/Hero'
 import Navbar from './components/Navbar'
@@ -20,6 +21,7 @@ function App() {
     <WorkingProcess/>
     <Team/>
     <Testimonials/>
+    <Contact/>
    </div>
   )
 }
