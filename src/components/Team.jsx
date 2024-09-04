@@ -5,9 +5,11 @@ import { FaLinkedinIn } from 'react-icons/fa'
 const Team = () => {
     const [visibleteam, SetVisibleTeam]=useState(6);
 
-    const handleShowMore =()=>(
+    const handleShowMore =()=>{
         SetVisibleTeam(prevCount => prevCount + 3)
-    )
+    }
+    
+
   return (
     <section className='pt-24 pb-12 bg-white' id='team'>
   <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>

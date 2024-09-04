@@ -16,14 +16,17 @@ const Footercontact = () => {
                     
         </div>
 
-        <div>
-            <form >
+        <div className='flex-1 bg-[#292A32] justify-center items-center p-8 rounded-md'>
+            <form  className='flex flex-col justify-center items-center h-20 md:flex-row gap-4'>
                 <input type="email" placeholder='hello@example.com' className='flex-1 px-4 py-2 border border-gray-300 rounded-md focus:outline-none
                 focus:ring-2 focus:ring-primary' />
-                <button className='bg-primary text-black px-6 py-2 rounded-md
+                <button className='bg-primary text-black px-6 py-2.5 rounded-md
                  font-medium'>Contact</button>
             </form>
         </div>
+
+
+        
 
     </div>
     </>

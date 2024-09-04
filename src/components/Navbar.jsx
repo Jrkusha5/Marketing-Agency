@@ -23,6 +23,16 @@ const Navbar = ()=>{
         {name: 'Team', href:'#team'},
         {name: 'Testimonials', href:'#testimonials'},
     ]
+    useEffect(()=>{
+        const sections= menuItems.map((item)=> document.querySelector(item.href));
+        const handleScroll = ()=>{
+            const scrollPosotion= window.scrollY + window.innerHeight/ 2;
+            let currentSection = '';
+            sections.forEach((section)=>{
+
+            })
+        }
+       },[])
     return(
         <nav>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
