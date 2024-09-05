@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { HiOutlineMenuAlt3, HiOutlineX } from "react-icons/hi";
 import { MdOutlineClose } from "react-icons/md";
 
@@ -26,15 +26,28 @@ const Navbar = ()=>{
     useEffect(()=>{
         const sections= menuItems.map((item)=> document.querySelector(item.href));
         const handleScroll = ()=>{
-            const scrollPosotion= window.scrollY + window.innerHeight/ 2;
+            const scrollPosition= window.scrollY + window.innerHeight/ 2;
             let currentSection = '';
             sections.forEach((section)=>{
-
+         if (section && section.offsetTop < scrollPosition &&section.offsetTop + section.
+            offsetheight >scrollPosition
+          )  {
+            currentSection= section.getAttribute('id')
+          }
             })
+
+            setActiveItem(menuItems.find(item=> item.href===`#${currentSection}`) ?.name || '' );
         }
-       },[])
+
+        window.addEventListener('scroll',handleScroll)
+        handleScroll();
+
+        return ()=>{
+            window.removeEventListener('scroll',handleScroll)
+        }
+       },[menuItems])
     return(
-        <nav>
+        <nav className="fixed top-0 w-full left-0 right-0 bg-white shadow-md z-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="flex justify-between h-16 items-center
                ">
