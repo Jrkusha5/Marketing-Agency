@@ -12,7 +12,7 @@ const CTA = () => {
               <h1 className='text-3xl font-bold text-secondary mb-4'>
                Let's make things Happen
               </h1>
-              <p className='text-gray-600 mb-6 md:w-2/3'>Our digital marketing agency helps businesses grow amd successful online
+              <p className='text-gray-600 mb-6 md:w-2/3'>Our Digital marketing agency helps businesses grow amd successful online
                 through a range of services including SEO, PPC ,social media marketing and
                 content creation
               </p>
