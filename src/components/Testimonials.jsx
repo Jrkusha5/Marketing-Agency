@@ -52,7 +52,7 @@ const Testimonials = () => {
                 </div>
                 <div className='md:w-1/2'>
                     <p className='text-secondary md:w-2/3'>Meet the skilled and experienced team behind our successful digital 
-                    marketing strategies.</p>
+                    marketing strategies</p>
                 </div>
 
             </div>

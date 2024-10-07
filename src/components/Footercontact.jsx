@@ -10,7 +10,7 @@ const Footercontact = () => {
                 <div className='text-white space-y-2'>
                     <p><strong>Email:</strong>Contact@posiivus.com</p>
                     <p><strong>Phone:</strong>+123 456 7890</p>
-                    <p><strong>Address:</strong>1234 Example St, City, Country</p>
+                    <p><strong>Address:</strong>AddisAbaba</p>
 
                     </div>
                     
